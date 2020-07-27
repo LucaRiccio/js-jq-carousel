@@ -1,4 +1,4 @@
-$(document).ready(function() {
+$(document).ready(function() {  // <------- IMPORTANTE
 
   //al click del tasto/classe prev richiamo una funzione che scorre le immagini.
   $(".prev").click(function() {
@@ -9,6 +9,17 @@ $(document).ready(function() {
   $(".next").click(function() {
     nextImage();
   })
+
+  $(".nav > i").click(function() {
+    var posizione = $(this).index();
+    $(".images img").removeClass("active");
+    $("img").eq(posizione).addClass("active");
+
+    $(".nav > i").removeClass("active");
+
+    $(".nav > i").eq(posizione).addClass("active");
+  });
+
 
 // ----FUNZIONI----
 
